@@ -81,3 +81,29 @@ El lenguaje de programación escogido fue F#.
 
 - **Otros:**  
   Herramientas como Paket para la gestión de paquetes y FAKE para la automatización de tareas son populares en el ecosistema F#.
+
+
+  
+### Pregunta 4
+Para este caso, se usó C++ como lenguaje para la respuesta, `gcov` como herramienta para el análisis de cobertura y `google test` como herramienta para la suit de testeo del programa.
+
+La generación del informe de cobertura del código se hizo de la siguiente forma:
+```bash
+ g++ -fprofile-arcs -ftest-coverage -g /ruta/pregunta4.cpp -o /ruta/pregunta4
+ gcov pregunta4
+```
+Y para la previsualización del informe en un archivo html se usó el paquete externo `lcov` con 
+```bash
+lcov --directory . --capture --output-file coverage.info
+genhtml --demangle-cpp -o coverage coverage.info
+```
+Lo que generó el archivo `index.html` en la carpeta `coverage`
+
+---
+
+Para generar los tests se usó la herramienta `google test`, instalada a través del gestor de paquetes con `sudo apt-get install libgtest-dev`.
+Y finalmente se ejecutó con:
+```bash
+g++ -fdiagnostics-color=always -g /ruta/test_pregunta4.cpp -o /ruta/test_pregunta4 -lgtest -lgtest_main -pthread
+```
+*Nota: Se añadieron como operadores sobrecargados los de igualdad (==) y diferencia (!=) ya que esto generaba problemas en la suite a la hora de realizar las pruebas*
