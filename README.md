@@ -83,6 +83,22 @@ El lenguaje de programación escogido fue F#.
   Herramientas como Paket para la gestión de paquetes y FAKE para la automatización de tareas son populares en el ecosistema F#.
 
 
+### Pregunta 3
+Para este caso, se usó Python como lenguaje para la respuesta, `coverage.py` como herramienta para el análisis de cobertura y `pytest` como herramienta para la suit de testeo del programa.
+
+La generación del informe de cobertura del código se hizo de la siguiente forma:
+```bash
+ coverage run -m pytest
+ coverage report
+```
+Y la generación del archivo html correspondiente al informe, para mejor visualización, se hizo de la siguiente manera:
+```bash
+ coverage html
+```
+
+Lo que generó el archivo `index.html` y sus dependencias (estilo, interactividad, etc.) en la carpeta `htmlcov`
+
+
   
 ### Pregunta 4
 Para este caso, se usó C++ como lenguaje para la respuesta, `gcov` como herramienta para el análisis de cobertura y `google test` como herramienta para la suit de testeo del programa.
@@ -97,7 +113,7 @@ Y para la previsualización del informe en un archivo html se usó el paquete ex
 lcov --directory . --capture --output-file coverage.info
 genhtml --demangle-cpp -o coverage coverage.info
 ```
-Lo que generó el archivo `index.html` en la carpeta `coverage`
+Lo que generó el archivo `index.html` y sus dependencias (estilo, interactividad, etc.) en la carpeta `coverage`
 
 ---
 
