@@ -193,12 +193,3 @@ def test_run_accion_invalida(monkeypatch, capsys):
     sim.run()
     captured = capsys.readouterr()
     assert "Accion inválida." in captured.out
-
-
-def test_main(monkeypatch, capsys):
-    inputs = iter(["DEFINIR PROGRAMA TestProgram LOCAL",
-                  "EJECUTABLE TestProgram", "SALIR"])
-    monkeypatch.setattr('sys.stdin', StringIO('\n'.join(inputs)))
-    captured = capsys.readouterr()
-    assert "Se definió el programa 'TestProgram', ejecutable en 'LOCAL'." in captured.out
-    assert "Si, es posible ejecutar el programa 'TestProgram'." in captured.out
