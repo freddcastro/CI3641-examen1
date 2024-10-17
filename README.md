@@ -82,6 +82,8 @@ El lenguaje de programación escogido fue F#.
 - **Otros:**  
   Herramientas como Paket para la gestión de paquetes y FAKE para la automatización de tareas son populares en el ecosistema F#.
 
+### Pregunta 2
+Se añadió un pdf pertinente a la pregunta 2.
 
 ### Pregunta 3
 Para este caso, se usó Python como lenguaje para la respuesta, `coverage.py` como herramienta para el análisis de cobertura y `pytest` como herramienta para la suit de testeo del programa.
